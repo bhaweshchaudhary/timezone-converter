@@ -130,7 +130,7 @@ const TimezoneTable = ({ selectedTimezones }) => {
   }
   return (
     <div className="mt-8">
-      <h2 className="text-2xl my-10 text-left underline">
+      <h2 className="my-10 text-left text-2xl underline">
         Time Comparison Table
       </h2>
       <Table
@@ -146,7 +146,6 @@ const TimezoneTable = ({ selectedTimezones }) => {
 
 const TimezoneSlider = () => {
   const [timezones, setTimezones] = useState([]);
-  const [selectedTimezone, setSelectedTimezone] = useState("UTC");
   const [selectedDate, setSelectedDate] = useState(moment());
   const [sliderValue, setSliderValue] = useState(0);
   const [timezoneList, setTimezoneList] = useState(getTimezoneListFromStorage);
@@ -201,10 +200,6 @@ const TimezoneSlider = () => {
       setSelectedDate(moment().add(value, "hours"));
     }
     setSliderValue(value);
-  };
-
-  const getFormattedTime = (timezone) => {
-    return selectedDate.clone().tz(timezone).format("YYYY-MM-DD HH:mm:ss");
   };
 
   const removeTimezoneSection = (id) => {
