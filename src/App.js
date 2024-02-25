@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import TimezoneSlider from "./component/TimezoneSlider";
 
 function App() {
+  const [timezones, setTimezones] = useState([
+    { id: "UTC", label: "UTC" },
+    { id: "IST", label: "IST" },
+    // Add more initial timezones as needed
+  ]);
+
+  const addTimezone = (timezone) => {
+    setTimezones([...timezones, timezone]);
+  };
+
+  const removeTimezone = (timezoneId) => {
+    setTimezones(timezones.filter((tz) => tz.id !== timezoneId));
+  };
+
+  const reorderTimezones = (newOrder) => {
+    setTimezones(newOrder);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="py-4 text-3xl">Timezone Converter</h1>
+      <TimezoneSlider
+        timezones={timezones}
+        addTimezone={addTimezone}
+        removeTimezone={removeTimezone}
+        reorderTimezones={reorderTimezones}
+      />
     </div>
   );
 }

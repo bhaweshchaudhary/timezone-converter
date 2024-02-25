@@ -1,0 +1,33 @@
+/* .timezone-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.timezone-section {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.add-section {
+  text-align: center;
+  margin-top: 20px;
+} */
+
+/* Add this to your CSS or Tailwind CSS */
+/* .slider-tooltip {
+  position: absolute;
+  top: -30px; /* Adjust this value as needed */
+/* background-color: #4299e1;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px; */
+
+/* Ensure this style is applied to the tooltip */
+/* .rc-slider-tooltip {
+  display: none !important;
+} */
